@@ -1,0 +1,36 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ExamDashboard</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        body {
+            background-image: url("../../Content/img/quizback.svg");
+            background-repeat: no-repeat;
+            background-size: 500px 500px;
+            background-position-x: center;
+            background-position-y: 100px;
+        }
+    </style>
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+        <div style="margin:30px">
+            <p>@ViewBag.error</p>
+            <h3>Enter Room Number</h3>
+            <input type="text" id="room" name="room" placeholder="Room Number" class="form-control" />
+            <input type="submit" value="Join" class="btn btn-outline-dark" style="margin-top:10px" />
+        </div>
+    }
+
+</body>
+</html>

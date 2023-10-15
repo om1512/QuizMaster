@@ -1,0 +1,70 @@
+﻿@model QuizMaster.Models.tbl_category
+
+@{
+    ViewBag.Title = "Add_Category";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Course</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.cat_name, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.cat_name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.cat_name, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-success" style="margin-top:10px" />
+            </div>
+        </div>
+    </div>
+}
+    
+<div style="overflow:scroll">
+    <table class="table table-responsive">
+        <thead>
+            <tr>
+                <th>
+                    ID
+                </th>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Room Id
+                </th>
+                <th>
+                    Questions
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var data in ViewData["list"] as List<QuizMaster.Models.tbl_category>)
+            {
+                <tr>
+                    <td>
+                        @data.cat_id
+                    </td>
+                    <td>
+                        @data.cat_name
+                    </td>
+                    <td>
+                        @data.cat_encrytped_string
+                    </td>
+                    <td><a class="btn btn-info btn-sm" href="@Url.Action("ViewAllQuestions", new { id = data.cat_id })">View Questions of this exam!</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
