@@ -252,7 +252,44 @@ namespace QuizMaster.Controllers
             TempData.Keep();
             return View(q);
         }
+        
 
+        public ActionResult Edit(int? id)
+        {
+            tbl_questions questions = db.tbl_questions.Find(id);
+
+            return View(questions);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(tbl_questions questions)
+        {
+            if (ModelState.IsValid)
+            {
+                tbl_questions new_questions = db.tbl_questions.Find(questions.q_id);
+                new_questions.q_text = questions.q_text;
+                new_questions.QA = questions.QA;
+                new_questions.QB = questions.QB;
+                new_questions.QC = questions.QC;
+                new_questions.QD = questions.QD;
+                new_questions.QCorrectAns = questions.QCorrectAns;
+                db.SaveChanges();
+                return RedirectToAction("Add_Category");
+            }
+            return View(questions);
+        }
+
+
+        public ActionResult Delete(int? id)
+        {
+            if(id != null)
+            {
+                var question = db.tbl_questions.Find(id);
+                db.tbl_questions.Remove(question);
+                db.SaveChanges();
+            }
+            return RedirectToAction("Add_Category");
+        }
 
         public ActionResult ViewAllQuestions(int? id)
         {

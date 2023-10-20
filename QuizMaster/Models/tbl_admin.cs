@@ -11,7 +11,7 @@ namespace QuizMaster.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
     public partial class tbl_admin
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,8 +19,9 @@ namespace QuizMaster.Models
         {
             this.tbl_category = new HashSet<tbl_category>();
         }
-    
+        
         public int ad_id { get; set; }
+        
         public string ad_name { get; set; }
         public string ad_pass { get; set; }
     
