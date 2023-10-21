@@ -21,8 +21,10 @@ namespace QuizMaster.Models
         }
         
         public int ad_id { get; set; }
-        
+
+        [Display(Name = "Admin Name")]
         public string ad_name { get; set; }
+        [Display(Name = "Admin Password")]
         public string ad_pass { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

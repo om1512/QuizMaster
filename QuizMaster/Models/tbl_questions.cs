@@ -11,15 +11,25 @@ namespace QuizMaster.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
     public partial class tbl_questions
     {
         public int q_id { get; set; }
+        [Display(Name = "Question Text")]
         public string q_text { get; set; }
+        [Display(Name = "Option A")]
         public string QA { get; set; }
+        [Display(Name = "Option B")]
+
         public string QB { get; set; }
+        [Display(Name = "Option C")]
+
         public string QC { get; set; }
+        [Display(Name = "Option D")]
+
         public string QD { get; set; }
+        [Display(Name = "Correct Ans")]
+
         public string QCorrectAns { get; set; }
         public Nullable<int> q_fk_catid { get; set; }
     

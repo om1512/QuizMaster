@@ -11,15 +11,27 @@ namespace QuizMaster.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
     public partial class tbl_setExam
     {
         public int examId { get; set; }
+
+        [Display(Name = "Exam Date")]
+
         public Nullable<System.DateTime> exam_date { get; set; }
+
+        [Display(Name = "Exam FK")]
+
         public Nullable<int> exam_fk_stu { get; set; }
+
+        [Display(Name = "Exam Name")]
+
         public string exam_name { get; set; }
+
+        [Display(Name = "Student Score")]
+
         public Nullable<int> std_score { get; set; }
-    
+            
         public virtual student student { get; set; }
     }
 }

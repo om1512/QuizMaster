@@ -11,7 +11,7 @@ namespace QuizMaster.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
     public partial class student
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,8 +21,11 @@ namespace QuizMaster.Models
         }
     
         public int std_id { get; set; }
+        [Display(Name = "Student Name")]
         public string std_name { get; set; }
+        [Display(Name = "Password")]
         public string std_password { get; set; }
+        [Display(Name = "ID Number")]
         public string std_image { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

@@ -11,7 +11,7 @@ namespace QuizMaster.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
     public partial class tbl_category
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,8 +21,12 @@ namespace QuizMaster.Models
         }
     
         public int cat_id { get; set; }
+        [Display(Name = "Category Name")]
         public string cat_name { get; set; }
+
         public Nullable<int> cat_fk_ad_id { get; set; }
+
+        [Display(Name = "Room Id")]
         public string cat_encrytped_string { get; set; }
     
         public virtual tbl_admin tbl_admin { get; set; }

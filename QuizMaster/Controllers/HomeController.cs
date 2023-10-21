@@ -16,7 +16,7 @@ namespace QuizMaster.Controllers
     {
         QuizMasterEntities db = new QuizMasterEntities();
         int scoreExam = 0;
-        score sc = new score();//ye abhi banaya hau ibject class ka 
+        score sc = new score();
 
         [HttpGet]
         public ActionResult TLogin()
